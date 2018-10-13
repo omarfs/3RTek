@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+  <div class="container">
+    <header class="jumbotron">
+      <div class="container">
+        <h1>Clients list</h1>
+        <p>
+          <a class="btn btn-primary btn-lg" href="/clients/new">Add New Client</a>
+        </p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+          <div class="list-group" role="tablist">
+              <% clients.forEach(function(client){ %>
+                    <a href="/clients/<%=client._id%>"  data-toggle="list" class="list-group-item list-group-item-action"><%= client.name %> <%= client.address %></a>
+              <% }); %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% include ../partials/footer %>

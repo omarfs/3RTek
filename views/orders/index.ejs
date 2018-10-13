@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+  <div class="container">
+    <header class="jumbotron">
+      <div class="container">
+        <h1>Orders List</h1>
+        <p>
+          <a class="btn btn-primary btn-lg" href="/orders/new">Add New Order</a>
+        </p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+          <div class="list-group" role="tablist">
+              <% orders.forEach(function(order){ %>
+                    <a href="/orders/<%=order._id%>"  data-toggle="list" class="list-group-item list-group-item-action"><%= order.orderid %></a>
+              <% }); %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% include ../partials/footer %>
